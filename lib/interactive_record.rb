@@ -51,7 +51,7 @@ def self.find_by_name(name)
 end
 
 def self.find_by(data)
-  sql = "SELECT * FROM #{self.column_names}"
+  sql = "SELECT * FROM #{self.find_by_name(data.name)}"
    DB[:conn].execute(sql)
 end
 
